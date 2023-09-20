@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:pope01/GentexFormFiled.dart';
+import 'package:pope01/pages/SingUp.dart';
 
 class loginPage extends StatelessWidget {
-  const loginPage({super.key});
+  final _conUserId = TextEditingController();
+  final _conPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 110, 173, 255),
-        title: Center(child: Text('login with SingUp')),
-      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -17,7 +16,7 @@ class loginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 50.0),
+                SizedBox(height: 130.0),
                 Text(
                   'Sing In',
                   style: TextStyle(
@@ -35,65 +34,66 @@ class loginPage extends StatelessWidget {
                       color: Colors.black,
                       fontSize: 25.0),
                 ),
-//user name----------------------------------------------
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  margin: EdgeInsets.only(top: 150.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      prefixIcon: Icon(Icons.person),
-                      hintText: 'user name',
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                    ),
-                  ),
+//metodo usuario
+                GetTextFormField(
+                    controller: _conUserId,
+                    icon: Icons.person,
+                    hintName: 'user name'),
+                SizedBox(
+                  height: 5.0,
                 ),
-//password----------------------------------------------
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  margin: EdgeInsets.only(top: 10.0),
-                  child: TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      prefixIcon: Icon(Icons.lock),
-                      hintText: 'password',
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                    ),
-                  ),
+//metodo contraseña
+                GetTextFormField(
+                  controller: _conPassword,
+                  icon: Icons.lock,
+                  hintName: 'Password ',
+                  isObscureText: true,
                 ),
-//boton Sing In
+
+//boton Sing In-------------------------------------------
                 Container(
-                  margin: EdgeInsets.all(40.0),
+                  margin: EdgeInsets.all(10.0),
                   width: double.infinity,
                   child: TextButton(
                     child: Text(
                       'Sing In',
                       style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {},
+                    ),
+                    onPressed: () {},
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(20.0),
                   ),
+                ),
+//Sing up----------------------------------------------
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('no tengo cuenta'),
+                      TextButton(
+                        child: Text('sing Up'),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => SingUp()));
+                        },
+                      )
+                    ],
                   ),
+                ),
+//olvide mi contraseña----------------------------------
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                        child: Text('ya tengo una cuenta'),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
