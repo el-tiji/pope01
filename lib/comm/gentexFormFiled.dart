@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 import 'package:flutter/material.dart';
 
 class GetTextFormField extends StatelessWidget {
@@ -13,7 +13,7 @@ class GetTextFormField extends StatelessWidget {
     required this.hintName,
     this.icon,
     this.isObscureText = false,
-    this.inputType = TextInputType.text,
+    this.inputType = TextInputType.text  ,
   });
 
   @override

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pope01/comm/genLoginSingupHeader.dart';
 import 'package:pope01/comm/gentexFormFiled.dart';
 import 'package:pope01/pages/login.dart';
 
@@ -19,14 +20,8 @@ class SingUp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 130.0),
-                Text(
-                  'Sing up',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 40.0),
-                ),
+//metodo texto 
+                genLoginSingupHeader('Sing Up'),
 //metodo usuario
                 GetTextFormField(
                     controller: _conUserId,
@@ -106,7 +101,7 @@ class SingUp extends StatelessWidget {
                   ),
                 ),
               ],
-            ), 
+            ),
           ),
         ),
       ),
