@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
 
 class GetTextFormField extends StatelessWidget {
@@ -5,12 +6,14 @@ class GetTextFormField extends StatelessWidget {
   String hintName;
   IconData? icon; // Make the icon property optional
   bool isObscureText;
+  TextInputType inputType;
 
   GetTextFormField({
     required this.controller,
     required this.hintName,
     this.icon,
     this.isObscureText = false,
+    this.inputType = TextInputType.text,
   });
 
   @override
@@ -21,6 +24,7 @@ class GetTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: isObscureText,
+        keyboardType: inputType,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.0)),

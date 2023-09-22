@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pope01/GentexFormFiled.dart';
+import 'package:pope01/comm/gentexFormFiled.dart';
 import 'package:pope01/pages/login.dart';
 
 class SingUp extends StatelessWidget {
-    final _conUserId = TextEditingController();
-    final _conPassword = TextEditingController();
-
+  final _conUserId = TextEditingController();
+  final _conEmail = TextEditingController();
+  final _conTelefono = TextEditingController();
+  final _conPassword = TextEditingController();
+  final _conCPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,25 +27,27 @@ class SingUp extends StatelessWidget {
                       color: Colors.black,
                       fontSize: 40.0),
                 ),
-//metodo usuario 
+//metodo usuario
                 GetTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
+                    inputType: TextInputType.name,
                     hintName: 'user name'),
                 SizedBox(
                   height: 5.0,
                 ),
 //metodo email
                 GetTextFormField(
-                    controller: _conUserId,
+                    controller: _conEmail,
                     icon: Icons.email,
+                    inputType: TextInputType.emailAddress,
                     hintName: 'Email'),
                 SizedBox(
                   height: 5.0,
                 ),
 //metodo telefono
                 GetTextFormField(
-                    controller: _conUserId,
+                    controller: _conTelefono,
                     icon: Icons.phone_android,
                     hintName: 'telefono'),
                 SizedBox(
@@ -58,17 +62,17 @@ class SingUp extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 5.0,
-                ),         
+                ),
 //confirm password----------------------------------------------
                 GetTextFormField(
-                  controller: _conPassword,
+                  controller: _conCPassword,
                   icon: Icons.lock,
                   hintName: 'confirm Password ',
                   isObscureText: true,
                 ),
                 SizedBox(
                   height: 5.0,
-                ), 
+                ),
 //boton Sing In-------------------------------------------
                 Container(
                   margin: EdgeInsets.all(40.0),
@@ -77,31 +81,32 @@ class SingUp extends StatelessWidget {
                     child: Text(
                       'crear cuenta',
                       style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {},
+                    ),
+                    onPressed: () {},
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  ),
+                ),
 //Sing up----------------------------------------------
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('no tengo cuenta'),
-                        TextButton(                          
-                          child: Text('sing In'),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=> loginPage()));
-                          },                        
-                        )
-                      ],
-                    ),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('no tengo cuenta'),
+                      TextButton(
+                        child: Text('sing In'),
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (_) => loginPage()));
+                        },
+                      )
+                    ],
                   ),
+                ),
               ],
-            ),
+            ), 
           ),
         ),
       ),

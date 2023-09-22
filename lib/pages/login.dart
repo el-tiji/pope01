@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pope01/GentexFormFiled.dart';
+import 'package:pope01/comm/gentexFormFiled.dart';
 import 'package:pope01/pages/SingUp.dart';
 
 class loginPage extends StatelessWidget {
@@ -38,7 +38,7 @@ class loginPage extends StatelessWidget {
                 GetTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
-                    hintName: 'user name'),
+                    hintName: 'user name', ),
                 SizedBox(
                   height: 5.0,
                 ),
@@ -47,7 +47,6 @@ class loginPage extends StatelessWidget {
                   controller: _conPassword,
                   icon: Icons.lock,
                   hintName: 'Password ',
-                  isObscureText: true,
                 ),
 
 //boton Sing In-------------------------------------------
