@@ -10,6 +10,10 @@ class SingUp extends StatelessWidget {
   final _conPassword = TextEditingController();
   final _conCPassword = TextEditingController();
 
+  SingUp (){
+    print('Ok');
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +81,7 @@ class SingUp extends StatelessWidget {
                       'crear cuenta',
                       style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () {},
+                    onPressed: SingUp,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black,
