@@ -1,11 +1,55 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:pope01/comm/comhelper.dart';
 import 'package:pope01/comm/genLoginSingupHeader.dart';
+import 'package:pope01/DatabaseHandler/DbHelper.dart';
+import 'package:pope01/Models/UserModel.dart';
 import 'package:pope01/comm/gentexFormFiled.dart';
 import 'package:pope01/pages/SingUp.dart';
 
+import 'homePages.dart';
+
+class _login extends StatefulWidget {
+  @override
+  _login createState() => _login();
+}
+
 class loginPage extends StatelessWidget {
+  final _formKey = new GlobalKey<FormState>(); 
+
   final _conUserId = TextEditingController();
   final _conPassword = TextEditingController();
+  var dbHelper ;
+
+  @override
+  void initState() {
+    super.initState();
+    dbHelper = DbHelper();
+  }
+
+  login() async {
+    String uid = _conUserId.text;
+    String Password = _conPassword.text;    
+
+    if (uid.isEmpty){
+      alertDialog(context, "porfavor ingrese user ID");
+    }
+    else if (Password.isEmpty){
+      alertDialog(context, "Please enter password");
+    }
+    else {
+       await dbHelper.getLoginUser(uid, Password).then((userData) {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (_) => HomePage()),
+                (Route<dynamic> route) => false);
+          }.catchError((error) {
+        print(error);
+        alertDialog(context, "Error: Login fallido ");
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
