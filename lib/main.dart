@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pope01/pages/homePages.dart';
+//import 'package:pope01/pages/homePages.dart';
 import 'package:pope01/pages/login.dart';
 
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: loginPage(),
+      home: LoginForm(),
       //home: HomePage(), 
     );
   }

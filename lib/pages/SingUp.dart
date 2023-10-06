@@ -14,6 +14,7 @@ class SingUp extends StatefulWidget {
 
 class _SingUp extends State<SingUp> {
   final _formKey = new GlobalKey<FormState>();
+  
 
   final _conUserId = TextEditingController();
   final _conUserName = TextEditingController();
@@ -21,7 +22,7 @@ class _SingUp extends State<SingUp> {
   final _conTelefono = TextEditingController();
   final _conPassword = TextEditingController();
   final _conCPassword = TextEditingController();
-  var dbHelper ;
+  var dbHelper = DbHelper();
 
   @override
   void initState(){
@@ -46,11 +47,15 @@ class _SingUp extends State<SingUp> {
         _formKey.currentState.save();
 
         UserModel uModel = UserModel(uid, uname, email, telefono, Password);
-        await dbHelper.saveData(uModel).then((userData) {
+        if (dbHelper == null) 
+        {dbHelper = DbHelper();
+        }
+
+        dbHelper.saveData(uModel).then((userData) {
           alertDialog(context, "guardado exitoso");
 
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => loginPage()));
+              context, MaterialPageRoute(builder: (_) => LoginForm()));
         }).catchError((error) {
           print(error);
           alertDialog(context, "Error: fallo en guardar");
@@ -157,7 +162,7 @@ class _SingUp extends State<SingUp> {
                           child: Text('sing In'),
                           onPressed: () {
                             Navigator.pushReplacement(context,
-                                MaterialPageRoute(builder: (_) => loginPage()),
+                                MaterialPageRoute(builder: (_) => LoginForm()),
                                 //(Route<dynamic> route)=> false
                                 );
                           },

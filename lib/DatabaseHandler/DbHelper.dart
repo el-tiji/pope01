@@ -51,14 +51,15 @@ class DbHelper {
     user.user_ID = (await dbClient.insert(table_User, user.toMap())) as String;
     return user;
   }
-    Future<List<UserModel>> getLoginUser(String user_ID,String password) async{
-      var dbClient = await db;
-      var res = await dbClient.rawQuery("Slect * from $table_User WHERE"
-      "$C_UserID = '$user_ID'AND"
-      "$C_password= '$password'");
-      if (res.isNotEmpty){
-        return res.map((e) => UserModel.fromMap(e)).toList();
-      }
-      return null;
+
+  Future<List<UserModel>?> getLoginUser(String user_ID, String password) async {
+    var dbClient = await db;
+    var res = await dbClient.rawQuery("Select * from $table_User WHERE"
+        "$C_UserID = '$user_ID'AND"
+        "$C_password= '$password'");
+    if (res.isNotEmpty) {
+      return res.map((e) => UserModel.fromMap(e)).toList();
+    }
+    return null;
   }
 }
