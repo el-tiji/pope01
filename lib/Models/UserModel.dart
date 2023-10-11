@@ -14,7 +14,7 @@ class UserModel {
     'Email': Email,
     'telefono': telefono,
     'password': password
-  };
+    };
   return Map;
 }
   UserModel.fromMap(Map<String, dynamic> map) {

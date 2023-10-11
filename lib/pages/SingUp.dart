@@ -4,7 +4,7 @@ import 'package:pope01/Models/UserModel.dart';
 import 'package:pope01/comm/comhelper.dart';
 import 'package:pope01/comm/genLoginSingupHeader.dart';
 import 'package:pope01/comm/gentexFormFiled.dart';
-import 'package:pope01/pages/login.dart';
+import 'package:pope01/pages/loginForm.dart';
 import 'package:toast/toast.dart';
 
 class SingUp extends StatefulWidget {
