@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:pope01/pages/homePages.dart';
-import 'package:pope01/pages/loginForm.dart';
+import 'package:pope01/pages/HomePage.dart';
 
 
 void main() {
@@ -9,12 +8,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
+  
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginForm(),
-      //home: HomePage(), 
+      home: HomePage(),
     );
-  }
+  }  
 }
