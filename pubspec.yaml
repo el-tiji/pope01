@@ -17,6 +17,7 @@ dependencies:
 
   responsive_builder: ^0.7.0
   table_calendar: ^3.0.9
+  flutter_launcher_icons: ^0.13.1
   
   
 

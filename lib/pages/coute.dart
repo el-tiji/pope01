@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pope01/pages/HomePage.dart';
 
 class cotizar extends StatefulWidget {
   @override
@@ -20,9 +21,9 @@ class _cotizarState extends State<cotizar> {
   Color forthightButtonTextColor = Colors.black;
   Color monthlyButtonTextColor = Colors.black;
 
-  Color cotizarButtonTextColor = Colors.black; 
-  Color agendarButtonTextColor = Colors.black; 
-  Color cancelarButtonTextColor = Colors.black; 
+  Color cotizarButtonTextColor = Colors.black;
+  Color agendarButtonTextColor = Colors.black;
+  Color cancelarButtonTextColor = Colors.black;
 
   void resetButtonColors() {
     setState(() {
@@ -240,6 +241,9 @@ class _cotizarState extends State<cotizar> {
                           cotizarButtonColor = Colors.white;
                           cotizarButtonTextColor = Colors.black;
                         });
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
                       },
                       style:
                           ElevatedButton.styleFrom(primary: cotizarButtonColor),
@@ -255,6 +259,9 @@ class _cotizarState extends State<cotizar> {
                           agendarButtonColor = Colors.white;
                           agendarButtonTextColor = Colors.black;
                         });
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
                       },
                       style:
                           ElevatedButton.styleFrom(primary: agendarButtonColor),
@@ -270,6 +277,9 @@ class _cotizarState extends State<cotizar> {
                           cancelarButtonColor = Colors.red;
                           cancelarButtonTextColor = Colors.white;
                         });
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                           primary: cancelarButtonColor),
