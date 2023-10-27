@@ -11,10 +11,18 @@ class _cotizarState extends State<cotizar> {
   Color forthightButtonColor = Colors.white;
   Color monthlyButtonColor = Colors.white;
 
+  Color cotizarButtonColor = Color.fromARGB(255, 0, 62, 113);
+  Color agendarButtonColor = Color.fromARGB(255, 0, 62, 113);
+  Color cancelarButtonColor = Colors.red;
+
   Color onceButtonTextColor = Colors.black;
   Color weeklyButtonTextColor = Colors.black;
   Color forthightButtonTextColor = Colors.black;
   Color monthlyButtonTextColor = Colors.black;
+
+  Color cotizarButtonTextColor = Colors.black; 
+  Color agendarButtonTextColor = Colors.black; 
+  Color cancelarButtonTextColor = Colors.black; 
 
   void resetButtonColors() {
     setState(() {
@@ -23,10 +31,18 @@ class _cotizarState extends State<cotizar> {
       forthightButtonColor = Colors.white;
       monthlyButtonColor = Colors.white;
 
+      Color cotizarButtonColor = Color.fromARGB(255, 0, 62, 113);
+      Color agendarButtonColor = Color.fromARGB(255, 0, 62, 113);
+      Color cancelarButtonColor = Colors.red;
+
       onceButtonTextColor = Colors.black;
       weeklyButtonTextColor = Colors.black;
       forthightButtonTextColor = Colors.black;
       monthlyButtonTextColor = Colors.black;
+
+      cotizarButtonTextColor = Colors.black;
+      agendarButtonTextColor = Colors.black;
+      cancelarButtonTextColor = Colors.black;
     });
   }
 
@@ -98,7 +114,8 @@ class _cotizarState extends State<cotizar> {
                         forthightButtonTextColor = Colors.white;
                       });
                     },
-                    style: ElevatedButton.styleFrom(primary: forthightButtonColor),
+                    style:
+                        ElevatedButton.styleFrom(primary: forthightButtonColor),
                     child: Text(
                       'Forthight',
                       style: TextStyle(color: forthightButtonTextColor),
@@ -112,7 +129,8 @@ class _cotizarState extends State<cotizar> {
                         monthlyButtonTextColor = Colors.white;
                       });
                     },
-                    style: ElevatedButton.styleFrom(primary: monthlyButtonColor),
+                    style:
+                        ElevatedButton.styleFrom(primary: monthlyButtonColor),
                     child: Text(
                       'Monthly',
                       style: TextStyle(color: monthlyButtonTextColor),
@@ -120,7 +138,6 @@ class _cotizarState extends State<cotizar> {
                   ),
                 ],
               ),
-//numero de cuartos
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
@@ -131,35 +148,11 @@ class _cotizarState extends State<cotizar> {
               DropdownButtonFormField<int>(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                        16), // Ajusta el valor según tus necesidades
+                    borderRadius: BorderRadius.circular(16),
                   ),
                 ),
                 items: [
                   for (int i = 1; i <= 6; i++)
-                    DropdownMenuItem<int>(value: i, child: Text(i.toString())),
-                ],
-                onChanged: (value) {
-                  // Hacer algo con el valor seleccionado
-                },
-              ),
-//numero de baños
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('How many bathrooms?'),
-                ),
-              ),
-              DropdownButtonFormField<int>(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                        16), // Ajusta el valor según tus necesidades
-                  ),
-                ),
-                items: [
-                  for (int i = 1; i <= 5; i++)
                     DropdownMenuItem<int>(value: i, child: Text(i.toString())),
                 ],
                 onChanged: (value) {
@@ -233,6 +226,60 @@ class _cotizarState extends State<cotizar> {
                     .multiline, // Configura el tipo de entrada como texto multilinea
                 textInputAction:
                     TextInputAction.newline, // Muestra una tecla de retorno
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        resetButtonColors();
+                        setState(() {
+                          cotizarButtonColor = Colors.white;
+                          cotizarButtonTextColor = Colors.black;
+                        });
+                      },
+                      style:
+                          ElevatedButton.styleFrom(primary: cotizarButtonColor),
+                      child: Text(
+                        'Cotizar',
+                        style: TextStyle(color: cotizarButtonTextColor),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        resetButtonColors();
+                        setState(() {
+                          agendarButtonColor = Colors.white;
+                          agendarButtonTextColor = Colors.black;
+                        });
+                      },
+                      style:
+                          ElevatedButton.styleFrom(primary: agendarButtonColor),
+                      child: Text(
+                        'Agendar',
+                        style: TextStyle(color: agendarButtonTextColor),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        resetButtonColors();
+                        setState(() {
+                          cancelarButtonColor = Colors.red;
+                          cancelarButtonTextColor = Colors.white;
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: cancelarButtonColor),
+                      child: Text(
+                        'Cancelar',
+                        style: TextStyle(color: cancelarButtonTextColor),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
