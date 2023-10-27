@@ -15,9 +15,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  path_provider: ^2.1.1
-  sqflite: ^2.3.0
-  toast: ^0.2.9
+  responsive_builder: ^0.7.0
+  table_calendar: ^3.0.9
   
   
 

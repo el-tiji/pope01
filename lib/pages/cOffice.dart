@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pope01/pages/coute.dart';
 
 class Office extends StatelessWidget {
   @override
@@ -10,20 +11,22 @@ class Office extends StatelessWidget {
           child: Text('Pope Cleaning'),
         ),
       ),
+//contenedor 1
      body: SingleChildScrollView(
-        // Envuelve tu Column en un SingleChildScrollView
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, // Centrar verticalmente en la pantalla
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              // Centrar el Container horizontalmente
-              child: Container(
-                constraints: BoxConstraints(
-                  maxWidth: 400,
-                  maxHeight: 500,
-                ),
-                decoration: BoxDecoration(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => cotizar()));
+                },
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 300,
+                    maxHeight: 500,
+                  ),
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16.0),
                     boxShadow: [
@@ -31,22 +34,71 @@ class Office extends StatelessWidget {
                         color: Colors.grey,
                         blurRadius: 16,
                       ),
-                    ]),
-                padding: EdgeInsets.all(
-                    20.0), // Agregar margen interno de 16.0 en todas las direcciones
+                    ],
+                  ),
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Free'),
+                      Text(
+                        'Try one project for yourself or your team with no time-limits.',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text('precio del producto'),
+                      Text(
+                        'No credit card required. One project, free forever.',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 20.0,
+            ),
+
+//contenedor 2
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => cotizar()));
+              },
+              child: Container(
+                constraints: BoxConstraints(
+                  maxWidth: 300,
+                  maxHeight: 500,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 16,
+                    ),
+                  ],
+                ),
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Free'),
                     Text(
-                      'Try one project for yourself or your team with no time-limits.',
+                      'New Container'),
+                    Text(
+                      'This is a new container with some different content.',
                       style: TextStyle(
                         fontSize: 16,
                       ),
                     ),
-                    Text('precio del producto'),
+                    Text('Another section'),
                     Text(
-                      'No credit card required. One project, free forever.',
+                      'You can customize the content as you like.',
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -55,82 +107,52 @@ class Office extends StatelessWidget {
                 ),
               ),
             ),
+
             SizedBox(
-              height: 20.0, // Agregar espacio entre los contenedores
+              height: 20.0,
             ),
-            Container(
-              constraints: BoxConstraints(
-                maxWidth: 400,
-                maxHeight: 500,
-              ),
-              decoration: BoxDecoration(
-                  color: Colors.white, // Cambia el color si es necesario
+            
+//contenedor 3
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => cotizar()));
+              },
+              child: Container(
+                constraints: BoxConstraints(
+                  maxWidth: 300,
+                  maxHeight: 500,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(16.0),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 16,
                     ),
-                  ]),
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                      'New Container'), // Cambia el contenido según tus necesidades
-                  Text(
-                    'This is a new container with some different content.',
-                    style: TextStyle(
-                      fontSize: 16,
+                  ],
+                ),
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'New Container'),
+                    Text(
+                      'This is a new container with some different content.',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  Text('Another section'),
-                  Text(
-                    'You can customize the content as you like.',
-                    style: TextStyle(
-                      fontSize: 16,
+                    Text('Another section'),
+                    Text(
+                      'You can customize the content as you like.',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20.0, // Agregar espacio entre los contenedores
-            ),
-            Container(
-              constraints: BoxConstraints(
-                maxWidth: 400,
-                maxHeight: 500,
-              ),
-              decoration: BoxDecoration(
-                  color: Colors.white,// Cambia el color si es necesario
-                  borderRadius: BorderRadius.circular(16.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 16,
-                    ),
-                  ]),
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                      'New Container'), // Cambia el contenido según tus necesidades
-                  Text(
-                    'This is a new container with some different content.',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text('Another section'),
-                  Text(
-                    'You can customize the content as you like.',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

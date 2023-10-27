@@ -4,6 +4,7 @@ import 'package:pope01/pages/2Settings.dart';
 import 'package:pope01/pages/cHouse.dart';
 import 'package:pope01/pages/cOffice.dart';
 import 'package:pope01/pages/cCarpet.dart';
+//import 'package:responsive_builder/responsive_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 110, 173, 255),
         title: Center(
-          child: Text('Pope Cleaning'),
+          child: Text('Pope Cleaning Services'),
         ),
       ),
       drawer: Drawer(
@@ -57,7 +58,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-//contenedor casa
+//contenedor alfombra
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -67,12 +68,16 @@ class HomePage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => MyHouse()));
+                        MaterialPageRoute(builder: (context) => carpet()));
                   },
                   child: Center(
                     child: Container(
-                      width: 700,
-                      height: 200,
+                      constraints: BoxConstraints(
+                        minWidth: 400,
+                        minHeight: 100,
+                        maxWidth: 800,
+                        maxHeight: 500,
+                      ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.white,
@@ -86,15 +91,15 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Icon(Icons.house,
+                          Icon(Icons.solar_power,
                               size: 150,
                               color: Color.fromARGB(255, 110, 173, 255)),
                           SizedBox(
                               width:
-                                  200), // Ajusta este valor para cambiar la separación entre el icono y el texto
+                                  20), // Ajusta este valor para cambiar la separación entre el icono y el texto
                           Text(
-                            'Clean My House',
-                            style: TextStyle(fontSize: 30, color: Colors.black),
+                            'Clean My Carpet',
+                            style: TextStyle(fontSize: 20, color: Colors.black),
                           ),
                         ],
                       ),
@@ -113,8 +118,12 @@ class HomePage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Office()));
                   },
                   child: Container(
-                    width: 700,
-                    height: 200,
+                    constraints: BoxConstraints(
+                      minWidth: 400,
+                      minHeight: 100,
+                      maxWidth: 800,
+                      maxHeight: 500,
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
@@ -133,10 +142,10 @@ class HomePage extends StatelessWidget {
                             color: Color.fromARGB(255, 110, 173, 255)),
                         SizedBox(
                             width:
-                                200), // Ajusta este valor para cambiar la separación entre el icono y el texto
+                                20), // Ajusta este valor para cambiar la separación entre el icono y el texto
                         Text(
                           'Clean My office',
-                          style: TextStyle(fontSize: 30, color: Colors.black),
+                          style: TextStyle(fontSize: 20, color: Colors.black),
                         ),
                       ],
                     ),
@@ -144,7 +153,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-//contenedor oalfombra
+//contenedor alfombra
             Padding(
               padding: EdgeInsets.all(20),
               child: Center(
@@ -152,11 +161,15 @@ class HomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) =>
-                            carpet())); // Ajusta la navegación a la página correcta
+                            MyHouse())); // Ajusta la navegación a la página correcta
                   },
                   child: Container(
-                    width: 700,
-                    height: 200,
+                    constraints: BoxConstraints(
+                      minWidth: 400,
+                      minHeight: 100,
+                      maxWidth: 800,
+                      maxHeight: 500,
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
@@ -170,15 +183,15 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(Icons.solar_power,
+                        Icon(Icons.house,
                             size: 150,
                             color: Color.fromARGB(255, 110, 173, 255)),
                         SizedBox(
                             width:
-                                200), // Ajusta este valor para cambiar la separación entre el icono y el texto
+                                20), // Ajusta este valor para cambiar la separación entre el icono y el texto
                         Text(
-                          'Clean My carpet',
-                          style: TextStyle(fontSize: 30, color: Colors.black),
+                          'Clean My House',
+                          style: TextStyle(fontSize: 20, color: Colors.black),
                         ),
                       ],
                     ),
