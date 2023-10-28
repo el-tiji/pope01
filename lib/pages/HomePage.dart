@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Icon(Icons.solar_power,
-                              size: 150,
+                              size: 140,
                               color: Color.fromARGB(255, 110, 173, 255)),
                           SizedBox(
                               width:
@@ -138,7 +138,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Icon(Icons.apartment,
-                            size: 150,
+                            size: 140,
                             color: Color.fromARGB(255, 110, 173, 255)),
                         SizedBox(
                             width:
@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Icon(Icons.house,
-                            size: 150,
+                            size: 140,
                             color: Color.fromARGB(255, 110, 173, 255)),
                         SizedBox(
                             width:
